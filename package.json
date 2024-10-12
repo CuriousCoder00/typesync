@@ -1,0 +1,57 @@
+{
+  "name": "typesync",
+  "displayName": "TypeSync",
+  "description": "TypeCode is a fun and engaging VS Code extension that brings the nostalgic sound of a typewriter to your coding experience. Every keystroke triggers authentic typewriter sound effects, making your workflow feel tactile and retro. Perfect for developers who miss the sound of traditional typing or just want to add a little fun to their day. Lightweight and easy to install, TypeCode enhances your coding sessions with an auditory touch, without disrupting performance. Enjoy the perfect blend of old-school vibes with modern development tools as you write code like never before!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDidChangeTextDocument"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "typesync.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "typesync.start",
+        "title": "Start Typing"
+      },
+      {
+        "command": "typesync.stop",
+        "title": "Stop Typing"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
