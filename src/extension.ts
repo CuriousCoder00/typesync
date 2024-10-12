@@ -8,8 +8,8 @@ export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "typesync" is now active!');
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("typesync.helloWorld", () => {
-      vscode.window.showInformationMessage("Typewriter opened from TypeSync!");
+    vscode.commands.registerCommand("typesync.typesync", () => {
+      vscode.window.showInformationMessage("TypeSync has been activated try typing to hear typewriter sound!");
     })
   );
 
